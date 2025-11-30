@@ -10,7 +10,7 @@ project architecture, coding conventions, and UI/UX framework.
 
 The purpose of this document is to provide clear architectural, coding,
 and design rules that Gemini must follow when generating code from Figma
-screens via the MCP server.\
+ViewControllers via the MCP server.\
 All generated code must match the existing project structure, reuse
 existing components, and comply with established patterns.
 
@@ -24,13 +24,13 @@ All generated code must be placed in the correct directory:
 
     src/
       components/
-      screens/
+      ViewControllers/
       services/
       hooks/
       utils/
       assets/
 
-**Rules** - Screens → `src/screens` - Reusable components →
+**Rules** - UI Screens → `src/ViewControllers` - Reusable components →
 `src/components` - Business logic → `src/services` - Shared logic →
 `src/hooks` - Helper functions → `src/utils` - No new folders should be
 created unless absolutely necessary.
@@ -42,7 +42,7 @@ created unless absolutely necessary.
 ### 3.1 Component Architecture
 
 -   Use **functional components only**.
--   Keep UI logic inside screens.
+-   Keep UI logic inside ViewControllers.
 -   Move reusable UI parts to `components/`.
 -   Do not add business logic to UI files.
 -   Each component must be small, modular, and reusable.
@@ -92,7 +92,7 @@ Do **not** introduce new libraries.
 -   **Variables & functions:** `camelCase`
 -   **Constants:** `UPPER_SNAKE_CASE`
 -   **File names:** `kebab-case` (or project default)
--   **Screens:** `<Name>Screen.js`
+-   **ViewControllers:** `<Name>Screen.swift`
 
 ------------------------------------------------------------------------
 
@@ -147,7 +147,7 @@ Each generated file must begin with:
 ```
     __tests__/
       components/
-      screens/
+      ViewControllers/
       services/
 
 -   Each newly generated component must include:
